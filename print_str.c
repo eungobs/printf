@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-Int main(void)
+int main(void)
 {
 	Int num = 20
-		Printf(the value of num using % "%d" is d\n" num);
-	Printf(the value of num using  %%I\n", num);
-	Return (0);
+		printf(the value of num using  "%%d," is "d\n," num);
+
+	printf(the value of num using  "%%I\n", num);
+	return (0);
 }
