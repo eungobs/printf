@@ -4,23 +4,23 @@
 /**
  * get_flags - Calculates flags
  * @format: Formatted string to print the arguments
- * @i: take a parameter.
+ * @j: take a parameter.
  * Return: Flags:
  *
  */
-int get_flags(const char *format, int *i)
+int get_flags(const char *format, int *j)
 {
 	/* - + 0 # ' ' */
 	/* 1 2 4 8  16 */
-	int h, curr_i;
+	int h, curr_j;
 	int flags = 0;
 	const char FLAGS_CH[] = {'-', '+', '0', '#', ' ', '\0'};
 	const int FLAGS_ARR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
 
-	for (curr_i = *i + 1; format[curr_i] != '\0'; curr_i++)
+	for (curr_j = *j + 1; format[curr_j] != '\0'; curr_j++)
 	{
 		for (h = 0; FLAGS_CH[h] != '\0'; h++)
-			if (format[curr_i] == FLAGS_CH[j])
+			if (format[curr_j] == FLAGS_CH[h])
 			{
 				flags |= FLAGS_ARR[h];
 				break;
@@ -30,7 +30,7 @@ int get_flags(const char *format, int *i)
 			break;
 	}
 
-	*i = curr_i - 1;
+	*j = curr_j - 1;
 
 	return (flags);
 }

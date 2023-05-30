@@ -8,7 +8,7 @@
  */
 int get_size(const char *format, int *b)
 {
-	int curr_b = *b + b;
+	int curr_b = *b + 1;
 	int size = 0;
 
 	if (format[curr_b] == 'l')
