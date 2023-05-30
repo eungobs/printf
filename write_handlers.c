@@ -30,7 +30,7 @@ int handle_write_char(char c, char buffer[],
 	if (width > 1)
 	{
 		buffer[BUFF_SIZE - 1] = '\0';
-		for (a = 0; i < width - 1; a++)
+		for (a = 0; a < width - 1; a++)
 			buffer[BUFF_SIZE - a - 2] = padd;
 
 		if (flags & F_MINUS)
@@ -109,7 +109,7 @@ int write_num(int ind, char buffer[],
 		length++;
 	if (width > length)
 	{
-		for (a = 1; i < width - length + 1; a++)
+		for (a = 1; a < width - length + 1; a++)
 			buffer[a] = padd;
 		buffer[a] = '\0';
 		if (flags & F_MINUS && padd == ' ')/* Asign extra char to left of buffer */
@@ -122,7 +122,7 @@ int write_num(int ind, char buffer[],
 		{
 			if (extra_c)
 				buffer[--ind] = extra_c;
-			return (write(1, &buffer[1], i - 1) + write(1, &buffer[ind], length));
+			return (write(1, &buffer[1], a - 1) + write(1, &buffer[ind], length));
 		}
 		else if (!(flags & F_MINUS) && padd == '0')/* extra char to left of padd */
 		{
@@ -154,8 +154,8 @@ int write_unsgnd(int is_negative, int ind,
 	char buffer[],
 	int flags, int width, int precision, int size)
 {
-	/* The number is stored at the bufer's right and starts at position a */
-	int length = BUFF_SIZE - ind - 1, i = 0;
+	/* The number is stored at the buffer's right and starts at position a */
+	int length = BUFF_SIZE - ind - 1, a = 0;
 	char padd = ' ';
 
 	UNUSED(is_negative);
@@ -185,11 +185,11 @@ int write_unsgnd(int is_negative, int ind,
 
 		if (flags & F_MINUS) /* Asign extra char to left of buffer [buffer>padd]*/
 		{
-			return (write(1, &buffer[ind], length) + write(1, &buffer[0], i));
+			return (write(1, &buffer[ind], length) + write(1, &buffer[0], a));
 		}
 		else /* Asign extra char to left of padding [padd>buffer]*/
 		{
-			return (write(1, &buffer[0], i) + write(1, &buffer[ind], length));
+			return (write(1, &buffer[0], a) + write(1, &buffer[ind], length));
 		}
 	}
 
@@ -205,7 +205,7 @@ int write_unsgnd(int is_negative, int ind,
  * @flags: flags specifier
  * @padd: character representing the padding
  * @extra_c: character representing extra char
- * @padd_start: [ndex at which padding should start
+ * @padd_start: index at which padding should start
  *
  * Return: number of written chars.
  */
