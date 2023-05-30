@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#iclude "main.h"
+#include "main.h"
 
 /**
  * print_pointer - Prints value of a pointer variable.
@@ -17,14 +17,14 @@ int print_pointer(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 char extra_c = 0, padd = ' ';
-int ind = BUFF_SIZE - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
+int ind = BUFSIZ - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
 unsigned long num_addrs;
 char map_to[] = "0123456789abcdef";
 void *addrs = va_arg(types, void *);
 UNUSED(width);
 UNUSED(size);
 if (addrs == NULL)
-return (write(1, "(nil)", 5));
+return (fwrite(int 1, "(nil)", 5));
 buffer[BUFF_SIZE - 1] = '\0';
 UNUSED(precision);
 num_addrs = (unsigned long)addrs;
@@ -42,7 +42,7 @@ else if (flags & F_SPACE)
 extra_c = ' ', length++;
 ind++;
 /*return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
-return (write_pointer(buffer, ind, length,
+return (print_pointer(buffer, int char * length,
 width, flags, padd, extra_c, padd_start));
 }
 
@@ -99,7 +99,7 @@ int print_reverse(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
 char *str;
-int a, count = 0;
+int a, out = 0;
 
 	UNUSED(buffer);
 	UNUSED(flags);
@@ -165,7 +165,7 @@ int flags, int width, int precision, int size)
 			{
 				x = out[s];
 				write(1, &x, 1);
-				count++;
+				out++;
 				break;
 			}
 		}
@@ -173,7 +173,7 @@ int flags, int width, int precision, int size)
 		{
 			x = str[g];
 			write(1, &x, 1);
-			count++;
+			out++;
 		}
 	}
 	return (count);
