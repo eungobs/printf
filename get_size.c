@@ -3,8 +3,7 @@
 /**
  * get_size - calculate  size to cast argument
  * @format: Formatted string in which to print the arguments
- * @i: lists arguments to be printed.
- *
+ * @b: lists arguments to be printed.
  * Return: Precision.
  */
 int get_size(const char *format, int *b)
