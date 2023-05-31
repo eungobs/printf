@@ -1,10 +1,9 @@
-
+#include <stdio.h>
 #include "main.h"
-<<<<<<< HEAD
-void print_buffer(char buffer[], int *buff_ind);
-=======
 
-void print_buffer(char buffer[], int *buff_ind);
+void print_buffer(char buffer[], int *buff_ind
+
+';'void print_buffer(char buffer[], int *buff_ind);
 
 >>>>>>> a1d43fde36e2645899f79f7acb14fbd29199fc0d
 /**
