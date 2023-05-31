@@ -43,22 +43,22 @@ return (write_unsgnd(0, j, buffer, flags, width, precision, size));
 int print_octal(va_list types, char buffer[],
 int flags, int width, int precision, int size)
 {
-int a = BUFF_SIZE - 2;
+int j = BUFF_SIZE - 2;
 unsigned long int num = va_arg(types, unsigned long int);
 unsigned long int init_num = num;
 UNUSED(width);
 num = convert_size_unsgnd(num, size);
 if (num == 0)
-buffer[k--] = '0';
+buffer[j--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
 while (num > 0)
 
-buffer[k--] = (num % 8) + '0';
+buffer[j--] = (num % 8) + '0';
 num /= 8;
 if (flags & F_HASH && init_num != 0)
-buffer[k--] = '0';
-k++;
-return (write_unsgnd(0, k, buffer, flags, width, precision, size));
+buffer[j--] = '0';
+j++;
+return (write_unsgnd(0, j, buffer, flags, width, precision, size));
 }
 
 /**
