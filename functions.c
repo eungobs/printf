@@ -111,18 +111,18 @@ int flags, int width, int precision, int size)
 	buffer[BUFF_SIZE - 1] = '\0';
 	num = (unsigned long int)n;
 	if (n < 0)
-	{
+	
 		num = (unsigned long int)((-1) * n);
 		is_negative = 1;
-	}
+	
 	while (num > 0)
-	{
+	
 		buffer[a--] = (num % 10) + '0';
 		num /= 10;
-	}
+	
 a++;
-	return (write_number(is_negative, ia buffer, flags, width, precision, size));
-}
+	return (write_number(is_negative, i , a), buffer, flags, width, precision, size);
+
 
 /**
  * print_binary - Prints unsigned number

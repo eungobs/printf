@@ -176,5 +176,5 @@ int flags, int width, int precision, int size)
 			out++;
 		}
 	}
-	return (count);
+	return (out);
 }

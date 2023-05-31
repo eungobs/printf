@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
-*void print_buffer(char buffer[], int *buff_ind);
+void print_buffer(char buffer[], int *buff_ind);
 /**
  * _printf - Printf function
  * @format: format.
@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(list, format);
-	for (j = 0; format && format[i] != '\0'; j++)
+	for (j = 0; format && format[j] != '\0'; j++)
 	{
 		if (format[j] != '%')
 		{
