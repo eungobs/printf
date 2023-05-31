@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 
-void print_buffer(char buffer[], int *buff_ind
+void print_buffer(char buffer[], int *buff_ind)
 
-';'void print_buffer(char buffer[], int *buff_ind);
-
->>>>>>> a1d43fde36e2645899f79f7acb14fbd29199fc0d
 /**
  * _printf - Printf function
  * @format: format.
@@ -22,12 +19,9 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(list, format);
-<<<<<<< HEAD
 	for (j = 0; format && format[j] != '\0'; j++)
-=======
 
-	for (i = 0; format && format[i] != '\0'; i++)
->>>>>>> a1d43fde36e2645899f79f7acb14fbd29199fc0d
+	for (i = 0; format && format[i] != '\0')
 	{
 		if (format[i] != '%')
 		{
