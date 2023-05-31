@@ -1,14 +1,10 @@
-
 #include "main.h"
-
-void print_buffer(char buffer[], int *buff_ind
 
 void print_buffer(char buffer[], int *buff_ind);
 
->>>>>>> a1d43fde36e2645899f79f7acb14fbd29199fc0d
 /**
- * _printf - Printf function
- * @format: format.
+ * _printf - Printf Function
+ * @format: Format.
  * Return: Printed chars.
  */
 int _printf(const char *format, ...)
@@ -22,12 +18,8 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(list, format);
-<<<<<<< HEAD
-	for (j = 0; format && format[j] != '\0'; j++)
-=======
 
 	for (i = 0; format && format[i] != '\0'; i++)
->>>>>>> a1d43fde36e2645899f79f7acb14fbd29199fc0d
 	{
 		if (format[i] != '%')
 		{
@@ -61,9 +53,9 @@ int _printf(const char *format, ...)
 }
 
 /**
- * print_buffer - Prints the contents of the buffer if it exist
- * @buffer: Array of chars
- * @buff_ind: Index at which to add next char, represents the length.
+ * print_buffer - Prints The Contents Of The Buffer If It Exist
+ * @buffer: array Of Chars
+ * @buff_ind: index at Which to add Next char, Represents the Length.
  */
 void print_buffer(char buffer[], int *buff_ind)
 {
